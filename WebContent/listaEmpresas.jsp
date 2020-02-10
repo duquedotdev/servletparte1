@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-   <%@ page import="java.util.*, br.com.alura.gerenciador.servlet.*" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.*, br.com.alura.gerenciador.servlet.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,18 +9,17 @@
 </head>
 <body>
 
-<ul>
+	<ul>
 
-<br>Lista Empresas:</br>
+		<br>Lista Empresas:
+		</br>
 		<%
 		Set<Empresa> lista = (LinkedHashSet<Empresa>)request.getAttribute("empresas");
 		for (Empresa empresas : lista) {
 			%>
-			<li>
-			<%= empresas.getNome()%>			
-			</li>
-			<%}%>		
-</ul>
+		<li><%= empresas.getNome()%></li>
+		<%}%>
+	</ul>
 
 </body>
 </html>
