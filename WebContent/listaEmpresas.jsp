@@ -1,25 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*, br.com.alura.gerenciador.servlet.*"%>
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE hmtl>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Java Standard Taglib</title>
 </head>
 <body>
+    Lista de empresas: <br />
 
-	<ul>
-
-		<br>Lista Empresas:
-		</br>
-		<%
-		Set<Empresa> lista = (LinkedHashSet<Empresa>)request.getAttribute("empresas");
-		for (Empresa empresas : lista) {
-			%>
-		<li><%= empresas.getNome()%></li>
-		<%}%>
-	</ul>
+    <ul>
+        <c:forEach items="${empresas}" var="empresa">
+            <li>${empresa.nome}</li>
+        </c:forEach>
+    </ul>
 
 </body>
 </html>
