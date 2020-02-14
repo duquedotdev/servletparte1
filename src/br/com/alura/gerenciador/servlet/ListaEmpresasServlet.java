@@ -19,7 +19,7 @@ public class ListaEmpresasServlet extends HttpServlet {
         super();
         }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 	
 		Banco banco = new Banco();
