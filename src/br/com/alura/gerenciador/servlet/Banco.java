@@ -27,6 +27,15 @@ public class Banco {
 	public Set<Empresa> getEmpresas(){
 		return Banco.listaEmpresas;
 	}
+	
+	public Empresa buscaEmpresaPelaId(Integer id) {
+		for (Empresa empresa: listaEmpresas) {
+			if(empresa.getId() == id) {
+				return empresa;
+			}
+		}
+		return null;
+	}
 
 	public void removeEmpresa(Integer id) {
 		
@@ -35,12 +44,14 @@ public class Banco {
 		while(it.hasNext()) {
 			
 			Empresa emp = it.next();
-			
-			for (Empresa empresa : listaEmpresas) {
-				if(empresa.getId() == id) {
+		
+				if(emp.getId() == id) {
 					it.remove();
 				}
 		}
+			
+		
+		
 		
 		
 			
@@ -48,4 +59,3 @@ public class Banco {
 		
 	}
 
-}
