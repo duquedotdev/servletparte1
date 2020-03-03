@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -13,8 +14,14 @@ import javax.servlet.annotation.WebFilter;
 import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Empresa;
 
-@WebFilter("/entrada")
+//@WebFilter("/entrada")
 public class MonitoramentoFilter implements Filter{
+	
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {}
+	
+	@Override
+	public void destroy() {}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -36,8 +43,6 @@ public class MonitoramentoFilter implements Filter{
 		
 		System.out.println("Tempo de Excecução " + (depois - antes) + " ms" );
 		
-		System.out.println(antes);
-		System.out.println(depois);
 		
 		
 		
